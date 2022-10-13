@@ -1,0 +1,10 @@
+/* import file reset */
+@import url('base/reset.css');
+/* import file variable */
+@import url('utils/variable.css');
+/* import file untuk halaman */
+@import url('pages/login.css');
+@import url('pages/dashboard.css');
+@import url('pages/insert.css');
+/* import file untuk component */
+@import url('component/sidebar.css');

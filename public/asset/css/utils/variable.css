@@ -1,0 +1,27 @@
+/* css variable */
+:root{
+      
+      /* Color */
+      --main: #0166FE;
+      --second: #ffff;
+      --text: #252525;
+      --paragraph: #5F5F5F;
+
+      /* shadow */
+      --shadow: 0px 10px 20px -9px #00000026;
+
+      /* Typography */
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+      --family: inter, sans-serif;
+      /* font size */
+      --sm: 1rem; /*16px*/
+      --med: 1.25rem; /*20px*/
+      --xl: 1.75rem; /*28px*/
+      --xxl: 2rem; /*32px*/
+
+      /* font weight */
+      --thin: 300;
+      --regular: 400;
+      --semi: 500;
+      --bold: 600;
+}

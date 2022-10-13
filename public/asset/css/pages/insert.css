@@ -1,0 +1,77 @@
+.insert_container{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0 0 2rem; 
+}
+
+.form_insert{
+      width: 25rem;
+}
+
+.judul_halaman{
+      margin:0 0 1.5rem 0;
+}
+
+.form_groups{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+}
+
+.form_group{
+      display: flex;
+      flex-direction: column;
+}
+
+.form_group:not(:last-child){
+      margin-bottom: 1.5rem;
+}
+
+/* form styling */
+input.input{
+      border: none;
+      border-bottom: 0.5px solid var(--text);
+      padding: 0.5rem 0 .5rem 0;
+}
+
+input.input:focus, input[type="date"]:focus,textarea[name="uraian"]:focus{
+      outline: none;
+      border-color: var(--main);
+}
+
+input[type="date"]{
+      padding: .5rem 0 .5rem 0;
+      border: none;
+      border-bottom: .5px solid var(--text);
+      color: var(--paragraph);
+}
+
+label[for="kategori"]{
+      color: var(--paragraph);
+      font-size: 14px;
+}
+
+textarea[name="uraian"]{
+      border: .5px solid var(--text);
+}
+
+input.submitt{
+      padding: .8rem 2rem;
+      border-radius: 5px;
+      border: 1px solid var(--text);
+      background: none;
+      color:var(--text);
+      font-weight: var(--bold);
+      cursor: pointer;
+}
+
+input.submitt:focus{
+      color: var(--main);
+      border-color: var(--main);
+}
+
+input.submitt:hover{
+      border-color: var(--main);
+}
