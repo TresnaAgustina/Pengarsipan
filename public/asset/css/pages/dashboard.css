@@ -3,15 +3,21 @@
       height: 100vh;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      padding: 2rem;
+      align-items: top;
+      justify-content: center;
+      padding: 1.5rem 0 0 0;
 }
 
+.inner_content_wrap{
+      width: 80%;
+}
+
+/* Page Title */
 .uname{
       color: var(--main);
 }
 
+/* Box Status */
 .box_group{
       width: 100%;
       height: auto;
@@ -19,13 +25,45 @@
       gap: 2rem;
 }
 
-.box_status{
-      width: 8rem;
-      height: 5rem;
-      border: .5px solid var(--main);
-      border-radius: 5px;
+
+/* Table styling */
+.tb_head{
+      background: linear-gradient(276deg, rgba(0,181,255,1) 0%, rgba(0,150,255,1) 33%, rgba(0,104,255,1) 100%);
+}
+
+.tb_field{
+      color: var(--second);
+}
+
+.judul{
+      color: var(--text);
+      text-decoration: underline !important;
+}
+
+.edit{
+      color: green;
+}
+
+.delete{
+      color: red;
+      font-weight: var(--bold);
+}
+
+/* Search Box */
+.search_box{
+      wiidth: 100%;
+      height: auto;
+      margin-top: 1.5rem;
+}
+
+.search_form{
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      gap: .5rem;
 }
+
+.search_label{
+      font-size: var(--);
+      font-weight: var(--bold);
+}
+

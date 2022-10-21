@@ -12,31 +12,30 @@
       <title>{{ $title }}</title>
 </head>
 <body>
+      {{-- <navbar class="navigation">
+            
+      </navbar> --}}
+
      <section class="master_container">
-            <aside class="sidebar">
-                  <div class="box_header">
-                        <h1 class="logo">Sisip</h1>
-                        <button class="toggle" onclick="toggle()"><i class="fa-solid fa-bars"></i></button>
-                  </div>
+            <aside class="sidebar" id="sidebar">
                   <div class="box">
+                        <div class="content_wrap">
+                              <h4 class="title">Sisip</h4>
+                              <button class="toggle" id="toggle"><i class="fa-solid fa-bars"></i></button>
+                        </div>
                         <ul class="link_list">
-                              <li class="list"><a href="/dashboard" class="link"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                              <li class="list"><a href="/insertDok" class="link"><i class="fa-solid fa-file"></i> Menu Dokumen</a></li>
+                              <li class="list"><a href="/dashboard" class="link"><i class="fa-solid fa-house icon"></i>Dashboard</a></li>
+                              <li class="list"><a href="/insertDok" class="link"><i class="fa-solid fa-file icon"></i>Dokumen</a></li>
                               <form action="{{ url('/out') }}" method="POST">
                                     @csrf      
-                                    <input type="submit" value="Logout">    
+                                    <input class="btn_logout" type="submit" value="Logout">    
                               </form>
-                              <div class="testJs"><p class="test" id="testJs">a</p></div>
+                              {{-- <div class="testJs"><p class="test" id="testJs">a</p></div> --}}
                         </ul>
                   </div>
             </aside>
 
-            <navbar class="navigation">
-                  <div class="content_wrap">
-                        <div class="toogle"><i class="fa-solid fa-bars"></i></div>
-                        <h1 class="title">Sistem Arsip</h1>
-                  </div>
-            </navbar>
+            
 
             <div class="content_container">
                   @yield('Dashboard')
