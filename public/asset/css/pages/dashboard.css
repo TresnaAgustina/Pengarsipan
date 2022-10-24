@@ -23,8 +23,45 @@
       height: auto;
       display: flex;
       gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
 }
 
+.box_status{
+      width: auto;
+      height: auto;
+      padding: 12px 18px;
+      background: var(--second);
+      border-radius: 5px;
+      display: flex;
+      align-items: top;
+      gap: 1rem;  
+      box-shadow: var(--shadow);
+}
+
+.box_status:hover {
+      background: var(--main);
+      transition: .2s ease-in-out;
+}
+
+.box_status:hover .box_title , .box_status:hover .box_icon, .box_status:hover .count_status{
+      color: var(--second);
+}
+
+.box_icon{
+      color: var(--main);
+      font-size: var(--med);
+}
+
+.count_status{
+      color: var(--paragraph);
+}
+
+.box_title{
+      font-size: 1.1rem !important;
+      font-weight: var(--semi);
+      color: var(--text);
+}
 
 /* Table styling */
 .tb_head{
@@ -37,7 +74,6 @@
 
 .judul{
       color: var(--text);
-      text-decoration: underline !important;
 }
 
 .edit{
@@ -47,6 +83,10 @@
 .delete{
       color: red;
       font-weight: var(--bold);
+}
+
+.judul{
+      word-wrap: normal;
 }
 
 /* Search Box */
@@ -63,7 +103,25 @@
 }
 
 .search_label{
-      font-size: var(--);
+      font-size: var(--med);
       font-weight: var(--bold);
 }
 
+.search_bar{
+      padding: 6px 12px;
+      border-radius: 5px 0 0 5px;
+      border: .5px solid var(--main);
+}
+
+.search_bar:focus{
+      outline: none;
+}
+
+.btn_search{
+      padding: 8px 12px;
+      background: var(--main);
+      color: var(--second);
+      outline: none;
+      border: none;
+      border-radius: 0 5px 5px 0;
+}

@@ -16,18 +16,24 @@ use App\Http\Controllers\RegisController;
 |
 */
 
-// Route untuk menampilkan Halaman
+// ===== Route untuk menampilkan Halaman ===== //
 Route::controller(ViewController::class)->group(function () {
+      // route untuk halaman Login via root
       Route::get('/', 'index');
+      // route untuk halaman Login
       Route::get('/login', 'index')->name('login');
+      // route untuk halaman Register
       Route::get('/regis', 'regisView');
+      // route untuk halaman Dashoard
       Route::get('/dashboard', 'dashboard')
             ->middleware("auth");
+      // route untuk fitur search
+      Route::get('/dashboard/search', 'search');
 });
 
 
 
-// Route untuk login admin [login,logout]
+//  ===== Route untuk login admin [login,logout] ===== //
 Route::controller(LoginController::class)->group(function () {
       // [route untuk login]
       Route::post('/login', 'authenticate');
@@ -35,11 +41,11 @@ Route::controller(LoginController::class)->group(function () {
       Route::post('/out', 'destroy');
 });
 
-// Route untuk register admin
+//  ===== Route untuk register admin ===== //
 Route::post('/regis', [RegisController::class, 'store']);
 
 
-// Route untuk menu pengarsipan dokumen [insert,update,delete]
+//  ===== Route untuk menu pengarsipan dokumen [insert,update,delete] ===== //
 Route::controller(MenuArsipController::class)->group(function () {
       // [route untuk input data]
       Route::get('/insertDok', 'index')->middleware('auth');

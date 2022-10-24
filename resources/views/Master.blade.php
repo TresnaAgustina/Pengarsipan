@@ -41,6 +41,7 @@
                   @yield('Dashboard')
                   @yield('InsertDok')
                   @yield('EditDok')
+                  @yield('Search')
             </div>
             
      </section>

@@ -7,6 +7,7 @@
                   <div class="judul_halaman">
                         <h1>Edit Dokumen</h1>
                   </div>
+                  {{-- Form Edit --}}
                   @foreach ($dokumen as $item)
                   <form action="{{ url('/editDok/'.$item-> id) }}" method="post" enctype="multipart/form-data" class="form_insert">
                         @csrf
@@ -59,6 +60,7 @@
                               <input type="submit" value="Submit" class="submitt">                  
                   </form>
                   @endforeach
+                  {{-- end Form Edit --}}
       
             </div>
      </section>

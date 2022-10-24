@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -27,9 +28,9 @@ class ViewController extends Controller
     public function dashboard(){
          // get data from db
       $dokumen = DB::table('DokTable')
-      ->orderBy('id', 'desc')
-      ->get();
+      ->orderBy('id', 'desc')->paginate(10);
 
+    // menghitung jumlah total dokumen
       $count = DB::table('DokTable')
              ->select(DB::raw('count(*) as idDoc, id'))
              ->where('id', '>=', 1)
@@ -37,6 +38,30 @@ class ViewController extends Controller
              ->get();
 
         return view('pages.Dashboard',compact('dokumen','count'), [
+            'title' => 'Admin Dashboard'
+        ]);
+    }
+
+    //  ===== Fitur Pencarian =====  //
+    public function search(Request $request){
+    // menghitung jumlah total dokumen
+      $count = DB::table('DokTable')
+             ->select(DB::raw('count(*) as idDoc, id'))
+             ->where('id', '>=', 1)
+             ->groupBy('id')
+             ->get();
+
+             
+        // menangkap data pencarian
+		$judul = $request->search;
+ 
+        // mengambil data dari table pegawai sesuai pencarian data
+        $dokumen = DB::table('DokTable')
+        ->where('judul_surat','like',"%".$judul."%")
+        ->get();
+
+            // mengirim data pegawai ke view index
+        return view('pages.search', compact( 'dokumen', 'count'), [
             'title' => 'Admin Dashboard'
         ]);
     }
