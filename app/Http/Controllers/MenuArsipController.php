@@ -10,9 +10,20 @@ class MenuArsipController extends Controller
 {
     // ===== Halaman InsertDoc ===== // 
     public function index(){
-        return view('pages.dok_arsip.Insert', [
-            'title' => 'Halaman Insert Data Dokumen'
+      // get data from db
+      $dokumen = DB::table('DokTable')
+      ->orderBy('id', 'desc')->paginate(10);
+
+        return view('pages.dok_arsip.Data', compact('dokumen'), [
+            'title' => 'Arsip Dokumen'
         ]);
+    }
+
+
+    public function input(){
+      return view('pages.dok_arsip.Insert', [
+        'title' => 'Halaman Insert Dokumen'
+      ]);
     }
 
 

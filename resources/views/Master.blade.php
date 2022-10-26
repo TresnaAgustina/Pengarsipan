@@ -32,7 +32,7 @@
                                       Dokumen
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                      <li><a class="dropdown-item" href="{{ url('#') }}">All Data</a></li>
+                                      <li><a class="dropdown-item" href="{{ url('/viewDok') }}">All Data</a></li>
                                       <li><a class="dropdown-item" href="{{ url('/insertDok') }}">Input Data</a></li>
                                     </ul>
                               </div>

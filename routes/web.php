@@ -48,8 +48,10 @@ Route::post('/regis', [RegisController::class, 'store']);
 
 //  ===== Route untuk menu pengarsipan dokumen [insert,update,delete] ===== //
 Route::controller(MenuArsipController::class)->group(function () {
+      // [route untuk menampilkan data Dokumen]
+      Route::get('/viewDok', 'index')->middleware('auth');
       // [route untuk menampilkan halaman input]
-      Route::get('/insertDok', 'index')->middleware('auth');
+      Route::get('/insertDok', 'input')->middleware('auth');
       // [route untuk input data]
       Route::post('/insertDok', 'store')->middleware('auth');
       

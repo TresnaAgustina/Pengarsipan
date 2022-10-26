@@ -1,0 +1,7 @@
+*Todo List*
+//27-10-2022
+1. Make View for BSI Data - MAIN TASK
+
+<--2. Make Insert Menu BSI - main task
+3. Make Edit and Delete Menu BSI - main task
+4. Start fixing UI Design BSI Menu**optional-->

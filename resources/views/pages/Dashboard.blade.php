@@ -12,7 +12,7 @@
             {{-- box status --}}
             <div class="box_group">
                   {{-- single box --}}
-                  <a href="#" class="page_link">
+                  <a href="{{ url('/viewDok') }}" class="page_link">
                         <div class="box_status">
                               {{-- <i class="fa-solid fa-folder-open box_icon"></i> --}}
                               <div class="text_group">
