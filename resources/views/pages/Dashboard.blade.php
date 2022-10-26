@@ -4,7 +4,6 @@
 @section('Dashboard')
 <section class="dashboard_container">
       <div class="inner_content_wrap">
-
             {{-- Title Page --}}
             <div class="page_title">
                   <h1>Selamat Datang, <span class="uname">{{ auth()->user()->username }}</span></h1>
@@ -28,7 +27,7 @@
                         <div class="box_status">
                               {{-- <i class="fa-solid fa-wifi box_icon"></i> --}}
                               <div class="text_group">
-                                    <h4 class="box_title">Bali Smart Iland</h4>
+                                    <h4 class="box_title">Bali Smart Island</h4>
                                     <p class="count_status">total: {{ $count->count('id') }}</p>
                               </div>
                         </div>
@@ -91,7 +90,6 @@
                         </div>
                   </form>
             </div>
-      
       
             {{-- Table Section --}}
             <div class="group_title">

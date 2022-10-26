@@ -116,6 +116,35 @@
       width: 100%;
 }
 
+.dropdown-btn{
+      width: 70%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 5px 0 5px 10px;
+      background: none;
+}
+
+.dropdown-btn:hover{
+      background: var(--second);
+      border-radius: 3px;
+}
+
+.dropdown-btn:hover .toggle-btn{
+      color: var(--main);
+      transition: all .2s ease-in-out;
+}
+
+.toggle-btn{
+      width: 100%;
+      background: none;
+      color: var(--second);
+      border: none;
+      display: flex;
+      align-items: center;
+}
+
 .icon{
       margin-right: 10px;
 }

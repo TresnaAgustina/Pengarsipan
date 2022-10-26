@@ -25,7 +25,30 @@
                         </div>
                         <ul class="link_list">
                               <li class="list"><a href="/dashboard" class="link"><i class="fa-solid fa-house icon"></i>Dashboard</a></li>
-                              <li class="list"><a href="/insertDok" class="link"><i class="fa-solid fa-file icon"></i>Dokumen</a></li>
+                              {{-- button dokumen --}}
+                              <div class="dropdown-btn">
+                                    <button class="toggle-btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <i class="fa-solid fa-file icon"></i>
+                                      Dokumen
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li><a class="dropdown-item" href="{{ url('#') }}">All Data</a></li>
+                                      <li><a class="dropdown-item" href="{{ url('/insertDok') }}">Input Data</a></li>
+                                    </ul>
+                              </div>
+                              {{-- button bsi --}}
+                              <div class="dropdown-btn">
+                                    <button class="toggle-btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <i class="fa-solid fa-wifi icon"></i>
+                                      BSI
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li><a class="dropdown-item" href="{{ url('/viewBsi') }}">All Data</a></li>
+                                      <li><a class="dropdown-item" href="{{ url('#') }}">Input Data</a></li>
+                                    </ul>
+                              </div>
+
+                              {{-- button logout --}}
                               <form action="{{ url('/out') }}" method="POST">
                                     @csrf      
                                     <input class="btn_logout" type="submit" value="Logout">    
@@ -39,9 +62,11 @@
 
             <div class="content_container">
                   @yield('Dashboard')
+                  @yield('DataDokumen')
                   @yield('InsertDok')
                   @yield('EditDok')
                   @yield('Search')
+                  @yield('Bsi_View')
             </div>
             
      </section>

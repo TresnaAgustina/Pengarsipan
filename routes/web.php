@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BsiController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MenuArsipController;
 use App\Http\Controllers\RegisController;
+use App\Http\Controllers\MenuArsipController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,14 +48,35 @@ Route::post('/regis', [RegisController::class, 'store']);
 
 //  ===== Route untuk menu pengarsipan dokumen [insert,update,delete] ===== //
 Route::controller(MenuArsipController::class)->group(function () {
-      // [route untuk input data]
+      // [route untuk menampilkan halaman input]
       Route::get('/insertDok', 'index')->middleware('auth');
+      // [route untuk input data]
       Route::post('/insertDok', 'store')->middleware('auth');
       
-      // [route untuk edit data]
+      // [route untuk menampilak halaman edit]
       Route::get('/editDok/{id}', 'edit')->middleware('auth');
+      // [route untuk edit data]
       Route::post('/editDok/{id}', 'update')->middleware('auth');
 
       // [route untuk delete data]
       Route::get('/deleteDok/{id}', 'delete')->middleware('auth');
 });
+
+
+//  ===== Route untuk menu BSI [insert,update,delete] ===== //
+Route::controller(BsiController::class)->group(function () {
+      // [route untuk menampilkan halaman input]
+      Route::get('/viewBsi', 'index')->middleware('auth');
+      // [route untuk input data]
+      Route::post('/insertBsi', 'store')->middleware('auth');
+      
+      // [route untuk menampilak halaman edit]
+      Route::get('/editBsi/{id}', 'edit')->middleware('auth');
+      // [route untuk edit data]
+      Route::post('/editBsi/{id}', 'update')->middleware('auth');
+
+      // [route untuk delete data]
+      Route::get('/deleteBsi/{id}', 'delete')->middleware('auth');
+});
+
+

@@ -13,7 +13,9 @@ class BsiController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.Bsi.BsiIndex', [
+            'title' => 'Bali Smart Island'
+        ]);
     }
 
     /**
