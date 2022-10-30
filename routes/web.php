@@ -20,16 +20,22 @@ use App\Http\Controllers\MenuArsipController;
 // ===== Route untuk menampilkan Halaman ===== //
 Route::controller(ViewController::class)->group(function () {
       // route untuk halaman Login via root
-      Route::get('/', 'index');
+      Route::get('/', 'index')
+            ->name('index');
       // route untuk halaman Login
-      Route::get('/login', 'index')->name('login');
+      Route::get('/login', 'index')
+            ->name('login');
       // route untuk halaman Register
-      Route::get('/regis', 'regisView');
+      Route::get('/regis', 'regisView')
+            ->name('register');
       // route untuk halaman Dashoard
       Route::get('/dashboard', 'dashboard')
-            ->middleware("auth");
+            ->middleware('auth')
+            ->name('Dashboard');
       // route untuk fitur search
-      Route::get('/dashboard/search', 'search');
+      Route::get('/dashboard/search', 'search')
+            ->middleware('auth')
+            ->name('search');
 });
 
 
@@ -48,8 +54,12 @@ Route::post('/regis', [RegisController::class, 'store']);
 
 //  ===== Route untuk menu pengarsipan dokumen [insert,update,delete] ===== //
 Route::controller(MenuArsipController::class)->group(function () {
+
       // [route untuk menampilkan data Dokumen]
-      Route::get('/viewDok', 'index')->middleware('auth');
+      Route::get('/viewDok', 'index')
+      ->middleware('auth')
+      ->name('DataDok');
+
       // [route untuk menampilkan halaman input]
       Route::get('/insertDok', 'input')->middleware('auth');
       // [route untuk input data]
@@ -67,8 +77,12 @@ Route::controller(MenuArsipController::class)->group(function () {
 
 //  ===== Route untuk menu BSI [insert,update,delete] ===== //
 Route::controller(BsiController::class)->group(function () {
+
       // [route untuk menampilkan halaman input]
       Route::get('/viewBsi', 'index')->middleware('auth');
+
+      //[route untuk halaman pendataan]
+      Route::get('/insertBsi', 'create')->middleware('auth');
       // [route untuk input data]
       Route::post('/insertBsi', 'store')->middleware('auth');
       

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Routing\Route;
 
 class ViewController extends Controller
 {
@@ -60,9 +61,15 @@ class ViewController extends Controller
         ->where('judul_surat','like',"%".$judul."%")
         ->get();
 
-            // mengirim data pegawai ke view index
+        // mengirim data pegawai ke view index
         return view('pages.search', compact( 'dokumen', 'count'), [
-            'title' => 'Admin Dashboard'
+            'title' => 'Pencarian'
         ]);
+
+        // if(Route::is('dashboard')){
+        //     $title = 'Admin Dashboard';
+        // }else if(Route::current()->getName() == 'DataDok'){
+        //     $title = 'Bali Smart Island';
+        // }
     }
 }

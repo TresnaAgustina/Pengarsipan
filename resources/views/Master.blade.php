@@ -44,7 +44,7 @@
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                       <li><a class="dropdown-item" href="{{ url('/viewBsi') }}">All Data</a></li>
-                                      <li><a class="dropdown-item" href="{{ url('#') }}">Input Data</a></li>
+                                      <li><a class="dropdown-item" href="{{ url('/insertBsi') }}">Input Data</a></li>
                                     </ul>
                               </div>
 
@@ -66,7 +66,8 @@
                   @yield('InsertDok')
                   @yield('EditDok')
                   @yield('Search')
-                  @yield('Bsi_View')
+                  @yield('DataBsi')
+                  @yield('InputBsi')
             </div>
             
      </section>

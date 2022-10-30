@@ -41,7 +41,7 @@
                       <td>{{ $item->kategori }}</td>
                       <td><a href="{{ $item->link_file }}" class="linkDok judul" target="_blank">Detail</a></td>
                       <td><a href="{{ url('/editDok/'.$item->id) }}" class="link_action edit">Edit</a></td>
-                      <td><a href="{{ url('/deleteDok/'.$item->id) }}" class="link_action delete" onclick="return confirm('Are you sure you want to delete this?')">Delete</a></td>
+                      <td><a href="{{ url('/deleteDok/'.$item->id) }}" class="link_action delete" onclick="return confirm('Yakin ingin menghapus Data?')">Delete</a></td>
                     </tr>
                   @endforeach
                   </tbody>
@@ -49,6 +49,6 @@
             {{-- End Tabel Data --}}
         </div>
 
-        <a href="{{ url('/dashboard') }}" class="back_btn">BACK</a>
+        <a href="{{ url()->previous() }}" class="back_btn">BACK</a>
     </section>
 @endsection

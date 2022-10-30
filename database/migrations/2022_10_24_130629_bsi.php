@@ -15,7 +15,8 @@ class Bsi extends Migration
     {
         Schema::create('BsiTable', function (Blueprint $table) {
             $table->id();
-            $table->string('serial_number');
+            $table->string('serial_number')->unique();
+            $table->string('tanggal');
             $table->string('nama');
             $table->string('lokasi');
             $table->string('kategori');
@@ -31,6 +32,6 @@ class Bsi extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('BsiTable');
     }
 }

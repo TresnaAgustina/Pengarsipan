@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BsiController extends Controller
 {
@@ -25,18 +26,33 @@ class BsiController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.Bsi.Input', [
+            'title' => 'Halaman Pendataan BSI'
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
-        //
+        // Validation
+      $validate = $request->validate([
+        'serian_number' => 'required|string|unique',
+        'tanggal' => 'required|date',
+        'nama' => 'required|string',
+        'lokasi' => 'required|string',
+        'kategori' => 'required|string',
+        'penyedia' => 'required|string',
+      ]); 
+
+      DB::table('DokTable')->insert($validate);
+
+      // ddd();
+     return redirect('/dashboard');   
     }
 
     /**
