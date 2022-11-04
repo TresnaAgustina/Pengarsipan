@@ -9,5 +9,13 @@ toggle.onclick = function () {
       button.classList.toggle("active");
 }
 
+//  when user click outside the sidebar -> close sidebar
+document.addEventListener('mouseup', function(e) {
+      var box = document.getElementById('sidebar');
+      if (!box.contains(e.target)) {
+      button.classList.remove("active");
+      box.classList.remove("open");
+      }
+  });
 
 // console.log('test');

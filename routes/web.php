@@ -5,7 +5,7 @@ use App\Http\Controllers\BsiController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisController;
-use App\Http\Controllers\MenuArsipController;
+use App\Http\Controllers\ArsipController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,7 +53,7 @@ Route::post('/regis', [RegisController::class, 'store']);
 
 
 //  ===== Route untuk menu pengarsipan dokumen [insert,update,delete] ===== //
-Route::controller(MenuArsipController::class)->group(function () {
+Route::controller(ArsipController::class)->group(function () {
 
       // [route untuk menampilkan data Dokumen]
       Route::get('/viewDok', 'index')

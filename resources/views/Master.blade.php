@@ -8,6 +8,8 @@
       <link rel="stylesheet" href="{{ asset('asset/css/app.css') }}">
       {{-- bootstrap css --}}
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      {{-- box icons CDN --}}
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
       <title>{{ $title }}</title>
 </head>
@@ -48,6 +50,18 @@
                                     </ul>
                               </div>
 
+                               {{-- button cctv --}}
+                               <div class="dropdown-btn">
+                                    <button class="toggle-btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                          <i class='bx bxs-cctv icon'></i>
+                                      CCTV
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li><a class="dropdown-item" href="{{ url('/viewBsi') }}">All Data</a></li>
+                                      <li><a class="dropdown-item" href="{{ url('/insertBsi') }}">Input Data</a></li>
+                                    </ul>
+                              </div>
+
                               {{-- button logout --}}
                               <form action="{{ url('/out') }}" method="POST">
                                     @csrf      
@@ -62,12 +76,18 @@
 
             <div class="content_container">
                   @yield('Dashboard')
+                  {{-- arsip dokumen --}}
                   @yield('DataDokumen')
                   @yield('InsertDok')
                   @yield('EditDok')
+                  {{-- search --}}
                   @yield('Search')
+                  {{-- bsi - bali smart island --}}
                   @yield('DataBsi')
                   @yield('InputBsi')
+                  {{-- cctv --}}
+                  @yield('DataCctv')
+                  @yield('InputCctv')
             </div>
             
      </section>

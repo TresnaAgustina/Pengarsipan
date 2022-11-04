@@ -14,7 +14,7 @@
                   {{-- single box --}}
                   <a href="{{ url('/viewDok') }}" class="page_link">
                         <div class="box_status">
-                              {{-- <i class="fa-solid fa-folder-open box_icon"></i> --}}
+                              <i class='bx bxs-folder-open box_icon fs-3' ></i>
                               <div class="text_group">
                                     <h4 class="box_title">Dokumen</h4>
                                     <p class="count_status">total: {{ $count->count('id') }}</p>
@@ -25,7 +25,7 @@
                   {{-- single box --}}
                   <a href="/viewBsi" class="page_link">
                         <div class="box_status">
-                              {{-- <i class="fa-solid fa-wifi box_icon"></i> --}}
+                              <i class='bx bx-wifi box_icon fs-3' ></i>
                               <div class="text_group">
                                     <h4 class="box_title">Bali Smart Island</h4>
                                     <p class="count_status">total: {{ $countBsi->count('id') }}</p>
@@ -36,7 +36,7 @@
                   {{-- single box --}}
                   <a href="#" class="page_link">
                         <div class="box_status">
-                              {{-- <i class="fa-solid fa-wifi box_icon"></i> --}}
+                              <i class='bx bxs-cctv box_icon fs-3'></i>
                               <div class="text_group">
                                     <h4 class="box_title">CCTV</h4>
                                     <p class="count_status">total: {{ $count->count('id') }}</p>
@@ -47,7 +47,7 @@
                   {{-- single box --}}
                   <a href="#" class="page_link">
                         <div class="box_status">
-                              {{-- <i class="fa-solid fa-wifi box_icon"></i> --}}
+                              <i class='bx bxs-tv box_icon fs-3'></i>
                               <div class="text_group">
                                     <h4 class="box_title">Videotron</h4>
                                     <p class="count_status">total: {{ $count->count('id') }}</p>
@@ -58,7 +58,7 @@
                   {{-- single box --}}
                   <a href="#" class="page_link">
                         <div class="box_status">
-                              {{-- <i class="fa-solid fa-wifi box_icon"></i> --}}
+                              <i class='bx bxs-network-chart box_icon fs-3'></i>
                               <div class="text_group">
                                     <h4 class="box_title">Intranet</h4>
                                     <p class="count_status">total: {{ $count->count('id') }}</p>
@@ -69,7 +69,7 @@
                   {{-- single box --}}
                   <a href="#" class="page_link">
                         <div class="box_status">
-                              {{-- <i class="fa-solid fa-wifi box_icon"></i> --}}
+                              <i class='bx bxs-server box_icon fs-3' ></i>
                               <div class="text_group">
                                     <h4 class="box_title">Server</h4>
                                     <p class="count_status">total: {{ $count->count('id') }}</p>
