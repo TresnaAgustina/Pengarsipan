@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 
-class BsiController extends Controller
+class CctvController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +13,7 @@ class BsiController extends Controller
      */
     public function index()
     {
-        // ambil data dari DB
-        $bsi = DB::table('BsiTable')->get();
-
-        return view('pages.Bsi.Data',compact('bsi'), [
-            'title' => 'Bali Smart Island'
-        ]);
+        //
     }
 
     /**
@@ -31,33 +23,18 @@ class BsiController extends Controller
      */
     public function create()
     {
-        return view('pages.Bsi.Input', [
-            'title' => 'Halaman Pendataan BSI'
-        ]);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        // Validation
-      $validate = $request->validate([
-        'serial_number' => 'required|string',
-        'tanggal' => 'required|date',
-        'nama' => 'required|string',
-        'kategori' => 'required|string',
-        'lokasi' => 'required|string',
-        'penyedia' => 'required|string',
-      ]); 
-    //   ddd();
-      DB::table('BsiTable')->insert($validate);
-
-      
-     return redirect('/viewBsi');   
+        //
     }
 
     /**

@@ -4,16 +4,37 @@
     <section class="container">
        {{-- Search Box --}}
        <div class="search_box">
-            <form action="{{ url('/dashboard/search') }}" method="get" class="search_form">
-                  @csrf
-                  <label for="search" class="label">Pencarian</label>
-                  <div class="group">
-                        <input type="text" class="search_bar" name="search" placeholder="Search">
-                        <input name="submit" value="search" type="submit" class="btn_submit">
-                  </div>
-            </form>
-      </div>
+        <form action="{{ url('/dashboard/search') }}" method="get" class="search_form">
+              @csrf
+              <label for="search" class="search_label">Pencarian</label>
+              <div class="group d-flex gap-1">
+                    <input type="text" class="search_bar" name="search" placeholder="Search">
+                    <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle btn-drop" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Kategori
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <div class="groups d-flex">
+                                      <input type="radio" name="kategori" value="spj" class="kategori">
+                                      <label for="kategori" class="labels">SPJ</label>
+                                </div>
 
+                                <div class="groups d-flex">
+                                      <input type="radio" name="kategori" value="kontrak" class="kategori">
+                                      <label for="kategori" class="labels">Kontrak</label>
+                                </div>
+
+                                <div class="groups d-flex">
+                                      <input type="radio" name="kategori" value="produk_hukum" class="kategori">
+                                      <label for="kategori" class="labels">Produk Hukum</label>
+                                </div>
+                          </ul>
+                    </div>  
+
+                    <input name="submit" value="submit" type="submit" class="btn_search">
+              </div>
+        </form>
+      </div>
 
       {{-- Table Section --}}
       <div class="group_title">

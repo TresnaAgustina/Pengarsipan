@@ -6,7 +6,7 @@
                   <div class="judul_halaman">
                         <h1>Pendataan Bali Smart Island</h1>
                   </div>
-                  <form action="{{ url('/insertDok') }}" method="post" class="form_insert" enctype="multipart/form-data">
+                  <form action="{{ url('/insertBsi') }}" method="post" class="form_insert" enctype="multipart/form-data">
                         @csrf
                         <div class="form_groups">
                               <div class="field_group">
@@ -26,7 +26,7 @@
                         </div>
       
                         <div class="form_group">
-                              <label for="kategori_title" class="kategori labels">Kategori Lokasi</label>
+                              <label for="kategori_title" class="kategori labels">Kategori</label>
                               <div class="radio_group">
                                     <input type="radio" name="kategori" value="desa_adat">
                                     <label for="kategori">Desa Adat</label>
@@ -42,6 +42,11 @@
                                     <label for="kategori">Puskesmas</label>
                               </div>
                         </div>
+
+                        <div class="form_group">
+                              <label for="lokasi" class="lokasi labels">Lokasi</label>
+                              <input type="text" name="lokasi" placeholder="lokasi" class="input">
+                        </div>
       
                         <div class="form_group">
                               <label for="penyedia" class="penyedia labels">Penyedia</label>
@@ -49,7 +54,7 @@
                         </div>
       
                         {{-- form button --}}
-                        <input type="submit" value="Submit" class="submitt">
+                        <input type="submit" value="submit" class="submitt">
                   </form>
             </div>
       </section>

@@ -23,12 +23,12 @@
                   </a>
 
                   {{-- single box --}}
-                  <a href="#" class="page_link">
+                  <a href="/viewBsi" class="page_link">
                         <div class="box_status">
                               {{-- <i class="fa-solid fa-wifi box_icon"></i> --}}
                               <div class="text_group">
                                     <h4 class="box_title">Bali Smart Island</h4>
-                                    <p class="count_status">total: {{ $count->count('id') }}</p>
+                                    <p class="count_status">total: {{ $countBsi->count('id') }}</p>
                               </div>
                         </div>
                   </a>
@@ -80,20 +80,42 @@
 
 
              {{-- Search Box --}}
-            <div class="search_box">
+            <div class="search_box mt-5">
                   <form action="{{ url('/dashboard/search') }}" method="get" class="search_form">
                         @csrf
                         <label for="search" class="search_label">Pencarian</label>
-                        <div class="group">
+                        <div class="group d-flex gap-1">
                               <input type="text" class="search_bar" name="search" placeholder="Search">
-                              <input name="submit" value="search" type="submit" class="btn_search">
+                              <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle btn-drop" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Kategori
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                          <div class="groups d-flex gap-2">
+                                                <input type="radio" name="kategori" value="spj" class="kategori">
+                                                <label for="kategori" class="labels">SPJ</label>
+                                          </div>
+      
+                                          <div class="groups d-flex gap-2">
+                                                <input type="radio" name="kategori" value="kontrak" class="kategori">
+                                                <label for="kategori" class="labels">Kontrak</label>
+                                          </div>
+      
+                                          <div class="groups d-flex gap-2">
+                                                <input type="radio" name="kategori" value="produk_hukum" class="kategori">
+                                                <label for="kategori" class="labels">Produk Hukum</label>
+                                          </div>
+                                    </ul>
+                              </div>  
+
+                              <input name="submit" value="submit" type="submit" class="btn_search">
                         </div>
                   </form>
             </div>
       
             {{-- Table Section --}}
             <div class="group_title">
-                  <h1 class="title">All Dokumen</h1>
+                  <h1 class="title text-dark mt-3">All Dokumen</h1>
             </div>
             {{-- Tabel Data --}}
               <div class="table-responsive">

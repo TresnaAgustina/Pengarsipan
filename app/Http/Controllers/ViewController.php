@@ -27,18 +27,25 @@ class ViewController extends Controller
 
     // ===== Halaman Dashboard ===== // 
     public function dashboard(){
-         // get data from db
+    // get data Dokumen from db
       $dokumen = DB::table('DokTable')
       ->orderBy('id', 'desc')->paginate(10);
 
     // menghitung jumlah total dokumen
       $count = DB::table('DokTable')
-             ->select(DB::raw('count(*) as idDoc, id'))
-             ->where('id', '>=', 1)
-             ->groupBy('id')
-             ->get();
+            ->select(DB::raw('count(*) as idDoc, id'))
+            ->where('id', '>=', 1)
+            ->groupBy('id')
+            ->get();
 
-        return view('pages.Dashboard',compact('dokumen','count'), [
+    // menghitung jumlah total dokumen
+        $countBsi = DB::table('BsiTable')
+            ->select(DB::raw('count(*) as idBsi, id'))
+            ->where('id', '>=', 1)
+            ->groupBy('id')
+            ->get();
+
+        return view('pages.Dashboard',compact('dokumen','count','countBsi' ), [
             'title' => 'Admin Dashboard'
         ]);
     }
@@ -51,15 +58,18 @@ class ViewController extends Controller
              ->where('id', '>=', 1)
              ->groupBy('id')
              ->get();
-
-             
+  
         // menangkap data pencarian
 		$judul = $request->search;
+		$kategori = $request->kategori;
  
         // mengambil data dari table pegawai sesuai pencarian data
         $dokumen = DB::table('DokTable')
-        ->where('judul_surat','like',"%".$judul."%")
+        ->Where('kategori','like',"%".$kategori."%")
+        ->Where('judul_surat','like',"%".$judul."%")
         ->get();
+
+        // ddd();
 
         // mengirim data pegawai ke view index
         return view('pages.search', compact( 'dokumen', 'count'), [
@@ -69,7 +79,7 @@ class ViewController extends Controller
         // if(Route::is('dashboard')){
         //     $title = 'Admin Dashboard';
         // }else if(Route::current()->getName() == 'DataDok'){
-        //     $title = 'Bali Smart Island';
+        //stea     $title = 'Bali Smart Island';
         // }
     }
 }

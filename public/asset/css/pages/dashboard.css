@@ -114,7 +114,27 @@
 }
 
 .search_bar:focus{
-      outline: none;
+      outline: 1.5px solid var(--main) !important;
+}
+
+.dropdown-menu{
+      padding: .5rem !important;
+      flex-direction: column !important;
+      border:1.5px solid var(--main) !important; 
+      border-top: none !important;
+}
+
+.btn-drop{
+      background: none !important;
+      border: 1px solid var(--main) !important; 
+      color: var(--main) !important;
+      border-radius: 0 !important;
+      height: 100%;
+}
+
+.btn-drop:focus{
+      outline: 1.5px solid var(--main) !important;
+      box-shadow: none !important;
 }
 
 .btn_search{

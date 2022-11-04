@@ -13,27 +13,29 @@
                         <table class="table">
                               <thead class="tb_head">
                                 <tr>
-                                  <th scope="col" class="tb_field">No.Surat</th>
-                                  <th scope="col" class="tb_field">Tgl. Surat</th>
-                                  <th scope="col" class="tb_field">Judul</th>
+                                  <th scope="col" class="tb_field">No. Seri</th>
+                                  <th scope="col" class="tb_field">Tanggal</th>
+                                  <th scope="col" class="tb_field">Nama</th>
                                   <th scope="col" class="tb_field">Kategori</th>
-                                  <th scope="col" class="tb_field">Link File</th>
+                                  <th scope="col" class="tb_field">Lokasi</th>
+                                  <th scope="col" class="tb_field">Penyedia</th>
                                   <th colspan="2" class="tb_field act">Aksi</th>
                                 </tr>
                               </thead>
                               <tbody>
-                              {{-- @foreach ($dokumen as $item) --}}
+                              @foreach ($bsi as $item)
                                 <tr>
-                                  <th scope="col">no surat</th>
-                                  <td scope="col">tgl surat</td>
-                                  <td scope="col" class="judul">judul</td>
+                                  <th scope="col">{{ $item->serial_number }}</th>
+                                  <td scope="col">{{ $item->tanggal }}</td>
+                                  <td scope="col" class="judul">{{ $item->nama }}</td>
                                   {{-- <td scope="col">{{ Str::limit("$item->judul_surat", 30, '...') }}</td> --}}
-                                  <td>kategori</td>
-                                  <td><a href="" class="linkDok judul" target="_blank">Detail</a></td>
+                                  <td>{{ $item->kategori }}</td>
+                                  <td>{{ $item->lokasi }}</td>
+                                  <td>{{ $item->penyedia }}</td>
                                   <td><a href="{{ url('/editBsi/') }}" class="link_action edit">Edit</a></td>
                                   <td><a href="{{ url('/deleteBsi/') }}" class="link_action delete" onclick="return confirm('Are you sure you want to delete this?')">Delete</a></td>
                                 </tr>
-                              {{-- @endforeach --}}
+                              @endforeach
                               </tbody>
                         </table>
                         {{-- End Tabel Data --}}
