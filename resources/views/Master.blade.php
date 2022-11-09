@@ -23,7 +23,7 @@
                   <div class="box">
                         <div class="content_wrap">
                               <h4 class="title">Sisip</h4>
-                              <button class="toggle" id="toggle"><i class="fa-solid fa-bars"></i></button>
+                              <button class="toggle" id="toggle"><i class='bx bxs-grid-alt fs-4 tggl'></i></button>
                         </div>
                         <ul class="link_list">
                               <li class="list"><a href="/dashboard" class="link"><i class="fa-solid fa-house icon"></i>Dashboard</a></li>
@@ -85,6 +85,7 @@
                   {{-- bsi - bali smart island --}}
                   @yield('DataBsi')
                   @yield('InputBsi')
+                  @yield('EditBsi')
                   {{-- cctv --}}
                   @yield('DataCctv')
                   @yield('InputCctv')

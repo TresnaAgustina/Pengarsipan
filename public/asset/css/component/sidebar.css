@@ -13,7 +13,7 @@
       z-index: 100;
       position: fixed;
       background: linear-gradient(77deg, rgba(44,219,255,1) 0%, rgba(89,155,255,1) 47%, rgba(1,102,254,1) 100%);
-      left: -170px;
+      left: -160px;
       top: 0;
       transition: all .3s ease-in-out;
 }
@@ -39,10 +39,13 @@
       border: none;
       outline: none;
       font-size: 20px;
-      padding: 0 5px;
+      padding: 5px 5px;
       border-radius: 5px;
       cursor: pointer;
       color: var(--second);
+      display: flex;
+      justify-content: center;
+      text-align: center;
 }
 
 .toggle:hover{
@@ -50,6 +53,7 @@
       background: var(--second);
       color: var(--main);
 }
+
 
 .box{
       width: 100%;

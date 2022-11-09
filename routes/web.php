@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BsiController;
+use App\Http\Controllers\CctvController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisController;
-use App\Http\Controllers\ArsipController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,7 +93,27 @@ Route::controller(BsiController::class)->group(function () {
       Route::post('/editBsi/{id}', 'update')->middleware('auth');
 
       // [route untuk delete data]
-      Route::get('/deleteBsi/{id}', 'delete')->middleware('auth');
+      Route::get('/deleteBsi/{id}', 'destroy')->middleware('auth');
 });
 
+
+//  ===== Route untuk menu CCTV [insert,update,delete] ===== //
+Route::controller(CctvController::class)->group(function () {
+
+      // [route untuk menampilkan halaman input]
+      Route::get('/viewCctv', 'index')->middleware('auth');
+
+      //[route untuk halaman pendataan]
+      Route::get('/insertCctv', 'create')->middleware('auth');
+      // [route untuk input data]
+      Route::post('/insertCctv', 'store')->middleware('auth');
+      
+      // [route untuk menampilak halaman edit]
+      Route::get('/editCctv/{id}', 'edit')->middleware('auth');
+      // [route untuk edit data]
+      Route::post('/editCctv/{id}', 'update')->middleware('auth');
+
+      // [route untuk delete data]
+      Route::get('/deleteCctv/{id}', 'destroy')->middleware('auth');
+});
 
